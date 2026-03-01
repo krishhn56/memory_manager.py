@@ -50,3 +50,38 @@ if __name__ == "__main__":
     store_command("play music", "music started")
     
     show_memory()
+def search_memory(keyword):
+
+    memory = load_memory()
+
+    results = []
+
+    for item in memory:
+
+        if keyword.lower() in item["command"].lower():
+            results.append(item)
+
+    return results
+
+
+def show_search(keyword):
+
+    results = search_memory(keyword)
+
+    print("Search Results:")
+
+    for item in results:
+
+        print("Command:", item["command"])
+        print("Result:", item["result"])
+        print("------------------")
+        if __name__ == "__main__":
+
+    store_command("open chrome", "chrome launched")
+    store_command("play music", "music started")
+
+    show_memory()
+
+    print("\nSearching chrome:\n")
+
+    show_search("chrome")
